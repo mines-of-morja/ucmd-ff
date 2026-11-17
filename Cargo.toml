@@ -1,0 +1,22 @@
+[package]
+name = "ucmd-ff"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "A classical force-field engine for UnitcellMD: energy, forces and virial of bonded terms, Lennard-Jones and Coulomb (direct or Ewald), with no dependencies."
+license = "Apache-2.0"
+repository = "https://github.com/mines-of-morja/ucmd-ff"
+readme = "README.md"
+publish = false
+
+# No dependencies, by design: the crate builds anywhere, also without network access.
+[dependencies]
+
+[lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[lints.clippy]
+# No unwrap/expect in library code; clippy.toml allows them inside tests.
+unwrap_used = "deny"
+expect_used = "deny"
